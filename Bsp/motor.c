@@ -1,7 +1,7 @@
 #include "can.h"
 #include "motor.h"
 #include "pid.h"
-moto_measure_t moto_chassis[1] = {0}; // 1 chassis moto
+moto_measure_t moto_chassis[motor_num] = {0}; // 1 chassis moto
 moto_measure_t moto_info;
 
 /**
@@ -42,10 +42,11 @@ u8 set_moto_current(CAN_HandleTypeDef hcan, s16 SID, s16 iq1)
     can_tx_message.StdId = 0x200; // ID
     can_tx_message.IDE = CAN_ID_STD;
     can_tx_message.RTR = CAN_RTR_DATA;
-    can_tx_message.DLC = 0x02;
+    can_tx_message.DLC = 0x04;
 
     can_send_data[0] = iq1 >> 8;
     can_send_data[1] = iq1;
+    
 
     if (HAL_CAN_AddTxMessage(&hcan, &can_tx_message, can_send_data, &send_mail_box) != HAL_OK)
     {
@@ -113,12 +114,12 @@ float set_angle;
  * @param set_round
  * @return float
  */
-float angle_speed_cacl(float set_round)
+float angle_speed_cacl(moto_measure_t moto_chassis[i] ,float set_round)
 {
     set_angle = set_round * 360.0f * 3591.0f / 187.0f;                  //减速比3591/187  计算设定总角度 36.0f/1.0f
     real_total_angle = moto_chassis[i].total_angle / 8192.0f * 360.0f;  //换算实际总角度
     //actual_round=(float)moto_chassis[i].total_angle / 8192.0f * 187.0f  / 3591.0f;
-    angle_setspeed = pid_calc(&pid_angle, real_total_angle, set_angle); //通过角度环计算设定(角)速度
+    angle_setspeed = pid_calc(&pid_angle[i], real_total_angle, set_angle); //通过角度环计算设定(角)速度
     return angle_setspeed;
 }
 

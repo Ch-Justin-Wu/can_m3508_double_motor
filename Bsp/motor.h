@@ -27,8 +27,8 @@ typedef struct{
 	u32			msg_cnt;
 }moto_measure_t;
 
-#define motor_num 1		//电机数量
-
+#define motor_num 2		//电机数量
+extern u8 i;
 extern moto_measure_t  moto_chassis[];
 extern moto_measure_t moto_info;
 
@@ -36,6 +36,6 @@ u8 get_moto_measure(moto_measure_t *ptr, uint8_t* can_receive_data);
 u8 set_moto_current(CAN_HandleTypeDef hcan, s16 SID, s16 iq1);
 void get_moto_offset(moto_measure_t *ptr, CAN_HandleTypeDef* hcan);
 void get_total_angle(moto_measure_t *p);
-float angle_speed_cacl(float set_round);
+float angle_speed_cacl(moto_measure_t moto_chassis[i] ,float set_round);
 
 #endif

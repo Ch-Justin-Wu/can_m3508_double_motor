@@ -40,7 +40,7 @@ extern CAN_HandleTypeDef hcan;
 extern  CAN_TxHeaderTypeDef can_tx_message;
 extern CAN_RxHeaderTypeDef can_rx_message;
 
-extern uint8_t can_send_data[8];    //发�?�的数据�?
+extern uint8_t can_send_data[8];    //发�?�的数据�??
 extern uint8_t can_receive_data[8]; //接受的数据帧
 /* USER CODE END Private defines */
 
@@ -57,7 +57,7 @@ void MX_CAN_Init(void);
 //  } motor_measure_t;
 
   void can_filter_init(void);
-  void can_cmd_send(int motor1);
+  void can_cmd_send(int motor1,int motor2);
   // void can_cmd_receive();
   void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan);
 /* USER CODE END Prototypes */

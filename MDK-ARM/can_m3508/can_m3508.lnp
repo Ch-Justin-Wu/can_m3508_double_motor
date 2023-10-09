@@ -5,6 +5,7 @@
 "can_m3508\main.o"
 "can_m3508\gpio.o"
 "can_m3508\can.o"
+"can_m3508\tim.o"
 "can_m3508\stm32f1xx_it.o"
 "can_m3508\stm32f1xx_hal_msp.o"
 "can_m3508\stm32f1xx_hal_gpio_ex.o"

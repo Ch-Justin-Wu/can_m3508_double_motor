@@ -65,17 +65,18 @@ void MX_CAN_Init(void)
   /* USER CODE BEGIN CAN_Init 2 */
 
   /* USER CODE END CAN_Init 2 */
+
 }
 
-void HAL_CAN_MspInit(CAN_HandleTypeDef *canHandle)
+void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
 {
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if (canHandle->Instance == CAN1)
+  if(canHandle->Instance==CAN1)
   {
-    /* USER CODE BEGIN CAN1_MspInit 0 */
+  /* USER CODE BEGIN CAN1_MspInit 0 */
 
-    /* USER CODE END CAN1_MspInit 0 */
+  /* USER CODE END CAN1_MspInit 0 */
     /* CAN1 clock enable */
     __HAL_RCC_CAN1_CLK_ENABLE();
 
@@ -95,22 +96,22 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef *canHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* CAN1 interrupt Init */
-    HAL_NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, 1, 0);
     HAL_NVIC_EnableIRQ(USB_LP_CAN1_RX0_IRQn);
-    /* USER CODE BEGIN CAN1_MspInit 1 */
+  /* USER CODE BEGIN CAN1_MspInit 1 */
 
-    /* USER CODE END CAN1_MspInit 1 */
+  /* USER CODE END CAN1_MspInit 1 */
   }
 }
 
-void HAL_CAN_MspDeInit(CAN_HandleTypeDef *canHandle)
+void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 {
 
-  if (canHandle->Instance == CAN1)
+  if(canHandle->Instance==CAN1)
   {
-    /* USER CODE BEGIN CAN1_MspDeInit 0 */
+  /* USER CODE BEGIN CAN1_MspDeInit 0 */
 
-    /* USER CODE END CAN1_MspDeInit 0 */
+  /* USER CODE END CAN1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_CAN1_CLK_DISABLE();
 
@@ -118,13 +119,13 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef *canHandle)
     PA11     ------> CAN_RX
     PA12     ------> CAN_TX
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_11 | GPIO_PIN_12);
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_11|GPIO_PIN_12);
 
     /* CAN1 interrupt Deinit */
     HAL_NVIC_DisableIRQ(USB_LP_CAN1_RX0_IRQn);
-    /* USER CODE BEGIN CAN1_MspDeInit 1 */
+  /* USER CODE BEGIN CAN1_MspDeInit 1 */
 
-    /* USER CODE END CAN1_MspDeInit 1 */
+  /* USER CODE END CAN1_MspDeInit 1 */
   }
 }
 
@@ -152,7 +153,7 @@ void can_filter_init(void)
   HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
 }
 
-void can_cmd_send(int motor1) //发送函数
+void can_cmd_send(int motor1,int motor2) //发送函数
 {
   uint32_t send_mail_box;
   can_tx_message.StdId = 0x200; // ID
@@ -162,6 +163,8 @@ void can_cmd_send(int motor1) //发送函数
 
   can_send_data[0] = motor1 >> 8;
   can_send_data[1] = motor1;
+  can_send_data[2] = motor2 >> 8;
+  can_send_data[3] = motor2;
 
   HAL_CAN_AddTxMessage(&hcan, &can_tx_message, can_send_data, &send_mail_box);
 }
@@ -186,14 +189,14 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
   {
     // flag++;
     HAL_CAN_GetRxMessage(hcan, CAN_FILTER_FIFO0, &can_rx_message, can_receive_data); //获取数据
-    static uint8_t i = 0;
+    //static uint8_t i = 0;
     i = can_rx_message.StdId - 0x201;
     // get_moto_measure(&moto_chassis[i], can_receive_data);
 
     switch (can_rx_message.StdId)
     {
     case 0x201:
-      // case 0x202:
+       case 0x202:
       // case 0x203:
       // case 0x204:
       if (moto_chassis[i].msg_cnt++ <= 50)

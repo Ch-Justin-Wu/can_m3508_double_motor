@@ -26,7 +26,10 @@ can_m3508\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
 can_m3508\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 can_m3508\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 can_m3508\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+can_m3508\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+can_m3508\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 can_m3508\main.o: ../Core/Inc/can.h
+can_m3508\main.o: ../Core/Inc/tim.h
 can_m3508\main.o: ../Core/Inc/gpio.h
 can_m3508\main.o: ../Bsp/pid.h
 can_m3508\main.o: ../Bsp/motor.h

@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "can.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -45,14 +46,26 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-int torque;
+
+int torque1;
+int torque2;
 float setspeed = 1000;
 float kp = 5;
 float ki = 0.8;
 float kd = 0;
+
+float kp_ang_1 = 5.0f;
+float ki_ang_1 = 0;
+float kd_ang_1 = 0;
+
+float kp_ang_2 = 7.0f;
+float ki_ang_2 = 0;
+float kd_ang_2 = 0;
+
 float set_round = 3; //设置圈数
 float actual_round;
-float angle_setspeed_ ;
+float angle_setspeed_1;
+float angle_setspeed_2;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,7 +92,7 @@ int main(void)
   // float set_angle;
   //  u8 key;
   //  s8 key_cnt;
-  u8 i;
+  // u8 i=0;
 
   /* USER CODE END 1 */
 
@@ -102,14 +115,21 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_CAN_Init();
+  MX_TIM2_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_Base_Start_IT(&htim2);
+  HAL_TIM_Base_Start_IT(&htim3);
   // CAN过滤器初始化
   can_filter_init();
 
   // PID参数初始化
-  pid_init(&pid_angle, 1500,0, 5, 0,5.0f, 0.0f, 0.0f);
-  pid_init(&pid_motor, 5000, 3000, 0, 0,5.0f, 0.8f, 0.0f);
+  // motor1
+  pid_init(&pid_angle[0], 1500, 0, 5, 0, 5.0f, 0.0f, 0.0f);
+  pid_init(&pid_motor[0], 5000, 3000, 0, 0, 5.0f, 0.8f, 0.0f);
+  // motor2
+  pid_init(&pid_angle[1], 1500, 10, 5, 0, 7.0f, 0.0f, 0.0f);
+  pid_init(&pid_motor[1], 5000, 3000, 0, 0, 4.0f, 0.02f, 0.5f);
 
   /* USER CODE END 2 */
 
@@ -118,21 +138,24 @@ int main(void)
   while (1)
   {
     //角速度计算
-    angle_setspeed_ = angle_speed_cacl(set_round);
+    angle_setspeed_1 = angle_speed_cacl(&moto_chassis[0], set_round);
+    angle_setspeed_2 = angle_speed_cacl(&moto_chassis[1], set_round);
     // PID 电流力矩计算
-    torque = pid_calc(&pid_motor, (float)moto_chassis[i].speed_rpm, angle_setspeed_);
+    torque1 = pid_calc(&pid_motor[0], (float)moto_chassis[1].speed_rpm, angle_setspeed_1);
+    torque2 = pid_calc(&pid_motor[1], (float)moto_chassis[1].speed_rpm, angle_setspeed_2);
     // CAN发送
-    can_cmd_send(torque);
+    can_cmd_send(torque1, torque2);
     //采样时间
     HAL_Delay(10);
 
     //实际位置
-    actual_round=(float)moto_chassis[i].total_angle / 8192.0f * 187.0f  / 3591.0f;//1.0f/36.0f
+    actual_round = (float)moto_chassis[0].total_angle / 8192.0f * 187.0f / 3591.0f; // 1.0f/36.0f
     // PID参数重设
-    pid_reset(&pid_motor, kp, ki, kd);
+    pid_reset(&pid_angle[0], kp_ang_1, ki_ang_1, kd_ang_1);
+    pid_reset(&pid_angle[1], kp_ang_2, ki_ang_2, kd_ang_2);
     //  HAL_CAN_Start(&hcan);
     // HAL_CAN_ActivateNotification(&hcan, CAN_IT_RX_FIFO0_MSG_PENDING);
-    //  can_cmd_send(torque);
+    //  can_cmd_send(torque1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

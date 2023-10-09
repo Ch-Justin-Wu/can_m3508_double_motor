@@ -1,9 +1,12 @@
 #include "pid.h"
 #include <math.h>
+#include "motor.h"
 #define ABS(x) ((x > 0) ? (x) : (-x))
 // 电机速度 PID 结构体定义
-pid_t pid_motor = {0};//速度环
-pid_t pid_angle = {0};//角度环
+pid_t pid_motor[motor_num] = {0}; //速度环
+pid_t pid_angle[motor_num] = {0}; //角度环
+// pid_t pid_motor2 = {0};
+// pid_t pid_angle2 = {0};
 
 void abs_limit(float *a, float ABS_MAX)
 {
@@ -20,7 +23,7 @@ void abs_limit(float *a, float ABS_MAX)
  * @param[in] intergral_limit: 积分限幅
  * @param[in] kp/ki/kd: 具体 PID 参数
  */
-void pid_init(pid_t *pid, uint32_t max_out, uint32_t intergral_limit, float Deadband,float Max_err, float kp, float ki, float kd)
+void pid_init(pid_t *pid, uint32_t max_out, uint32_t intergral_limit, float Deadband, float Max_err, float kp, float ki, float kd)
 {
     pid->integral_limit = intergral_limit;
     pid->max_output = max_out;
@@ -47,8 +50,8 @@ float pid_calc(pid_t *pid, float get, float set)
 
     if (pid->max_err != 0 && ABS(pid->err[NOW]) > pid->max_err)
         return 0;
-     if (pid->deadband != 0 && ABS(pid->err[NOW]) < pid->deadband)//死区控制
-         return 0;
+    if (pid->deadband != 0 && ABS(pid->err[NOW]) < pid->deadband) //死区控制
+        return 0;
 
     pid->pout = pid->p * pid->err[NOW];
     pid->iout += pid->i * pid->err[NOW];

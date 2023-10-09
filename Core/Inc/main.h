@@ -59,7 +59,25 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
+  extern int torque1;
+  extern int torque2;
+  extern float setspeed ;
+  extern float kp ;
+  extern float ki ;
+  extern float kd ;
 
+  extern float kp_ang_1 ;
+  extern float ki_ang_1 ;
+  extern float kd_ang_1 ;
+
+  extern float kp_ang_2 ;
+  extern float ki_ang_2 ;
+  extern float kd_ang_2 ;
+
+  extern float set_round ; //设置圈数
+  extern float actual_round;
+  extern float angle_setspeed_1;
+  extern float angle_setspeed_2;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
