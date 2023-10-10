@@ -1,6 +1,6 @@
 Dependencies for Project 'can_m3508', Target 'can_m3508': (DO NOT MODIFY !)
 CompilerVersion: 5060061::V5.06 update 1 (build 61)::ARMCC
-F (startup_stm32f103xb.s)(0x6523CB43)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o can_m3508\startup_stm32f103xb.o --depend can_m3508\startup_stm32f103xb.d)
+F (startup_stm32f103xb.s)(0x6523F1EA)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o can_m3508\startup_stm32f103xb.o --depend can_m3508\startup_stm32f103xb.d)
 F (..\Bsp\pid.c)(0x6523BD47)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\pid.o --omf_browse can_m3508\pid.crf --depend can_m3508\pid.d)
 I (..\Bsp\pid.h)(0x6523BC92)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64FADB36)
@@ -31,19 +31,19 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x64FADB36)
 I (d:\Keil_v5\ARM\ARMCC\include\math.h)(0x569DEA3A)
-I (..\Bsp\motor.h)(0x6523B619)
+I (..\Bsp\motor.h)(0x6524AFE7)
 I (..\Bsp\mytype.h)(0x651D34FB)
 I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
 I (../Core/Inc/can.h)(0x6523C9DB)
-I (../Core/Inc/main.h)(0x6523DBE0)
+I (../Core/Inc/main.h)(0x6524A0F3)
 F (..\Bsp\pid.h)(0x6523BC92)()
 F (..\Bsp\mytype.h)(0x651D34FB)()
-F (..\Bsp\motor.c)(0x6523BDC1)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\motor.o --omf_browse can_m3508\motor.crf --depend can_m3508\motor.d)
+F (..\Bsp\motor.c)(0x6524B7A9)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\motor.o --omf_browse can_m3508\motor.crf --depend can_m3508\motor.d)
 I (../Core/Inc/can.h)(0x6523C9DB)
-I (../Core/Inc/main.h)(0x6523DBE0)
+I (../Core/Inc/main.h)(0x6524A0F3)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64FADB36)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6523C9DB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64FADB36)
@@ -71,16 +71,16 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x64FADB36)
-I (..\Bsp\motor.h)(0x6523B619)
+I (..\Bsp\motor.h)(0x6524AFE7)
 I (..\Bsp\mytype.h)(0x651D34FB)
 I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
 I (..\Bsp\pid.h)(0x6523BC92)
-F (..\Bsp\motor.h)(0x6523B619)()
-F (../Core/Src/main.c)(0x6523DBC5)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\main.o --omf_browse can_m3508\main.crf --depend can_m3508\main.d)
-I (../Core/Inc/main.h)(0x6523DBE0)
+F (..\Bsp\motor.h)(0x6524AFE7)()
+F (../Core/Src/main.c)(0x6524B1C7)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\main.o --omf_browse can_m3508\main.crf --depend can_m3508\main.d)
+I (../Core/Inc/main.h)(0x6524A0F3)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64FADB36)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6523C9DB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64FADB36)
@@ -112,7 +112,7 @@ I (../Core/Inc/can.h)(0x6523C9DB)
 I (../Core/Inc/tim.h)(0x6523C9DB)
 I (../Core/Inc/gpio.h)(0x65191FE6)
 I (../Bsp/pid.h)(0x6523BC92)
-I (../Bsp/motor.h)(0x6523B619)
+I (../Bsp/motor.h)(0x6524AFE7)
 I (../Bsp/mytype.h)(0x651D34FB)
 I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x569DEA3A)
@@ -120,7 +120,7 @@ I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
 F (../Core/Src/gpio.c)(0x65191FE6)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\gpio.o --omf_browse can_m3508\gpio.crf --depend can_m3508\gpio.d)
 I (../Core/Inc/gpio.h)(0x65191FE6)
-I (../Core/Inc/main.h)(0x6523DBE0)
+I (../Core/Inc/main.h)(0x6524A0F3)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64FADB36)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6523C9DB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64FADB36)
@@ -148,9 +148,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x64FADB36)
-F (../Core/Src/can.c)(0x6523C9DB)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\can.o --omf_browse can_m3508\can.crf --depend can_m3508\can.d)
+F (../Core/Src/can.c)(0x65240C03)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\can.o --omf_browse can_m3508\can.crf --depend can_m3508\can.d)
 I (../Core/Inc/can.h)(0x6523C9DB)
-I (../Core/Inc/main.h)(0x6523DBE0)
+I (../Core/Inc/main.h)(0x6524A0F3)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64FADB36)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6523C9DB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64FADB36)
@@ -178,15 +178,16 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x64FADB36)
-I (../Bsp/motor.h)(0x6523B619)
+I (../Bsp/motor.h)(0x6524AFE7)
 I (../Bsp/mytype.h)(0x651D34FB)
 I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
 I (d:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
-F (../Core/Src/tim.c)(0x6523C9DB)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\tim.o --omf_browse can_m3508\tim.crf --depend can_m3508\tim.d)
+I (../Bsp/pid.h)(0x6523BC92)
+F (../Core/Src/tim.c)(0x6524BC20)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\tim.o --omf_browse can_m3508\tim.crf --depend can_m3508\tim.d)
 I (../Core/Inc/tim.h)(0x6523C9DB)
-I (../Core/Inc/main.h)(0x6523DBE0)
+I (../Core/Inc/main.h)(0x6524A0F3)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64FADB36)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6523C9DB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64FADB36)
@@ -214,8 +215,16 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x64FADB36)
+I (../Core/Inc/can.h)(0x6523C9DB)
+I (../Bsp/pid.h)(0x6523BC92)
+I (../Bsp/motor.h)(0x6524AFE7)
+I (../Bsp/mytype.h)(0x651D34FB)
+I (d:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x569DEA3A)
+I (d:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x569DEA3A)
+I (d:\Keil_v5\ARM\ARMCC\include\string.h)(0x569DEA3A)
+I (d:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x569DEA3A)
 F (../Core/Src/stm32f1xx_it.c)(0x6523C9DB)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\stm32f1xx_it.o --omf_browse can_m3508\stm32f1xx_it.crf --depend can_m3508\stm32f1xx_it.d)
-I (../Core/Inc/main.h)(0x6523DBE0)
+I (../Core/Inc/main.h)(0x6524A0F3)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64FADB36)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6523C9DB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64FADB36)
@@ -245,7 +254,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x64FADB36)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x64FADB36)
 I (../Core/Inc/stm32f1xx_it.h)(0x6523C9DB)
 F (../Core/Src/stm32f1xx_hal_msp.c)(0x65191FE7)(--c99 -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Bsp-I.\RTE\_can_m3508-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\Users\Justin Wu\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB -DUSE_STDPERIPH_DRIVER-o can_m3508\stm32f1xx_hal_msp.o --omf_browse can_m3508\stm32f1xx_hal_msp.crf --depend can_m3508\stm32f1xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x6523DBE0)
+I (../Core/Inc/main.h)(0x6524A0F3)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64FADB36)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x6523C9DB)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x64FADB36)

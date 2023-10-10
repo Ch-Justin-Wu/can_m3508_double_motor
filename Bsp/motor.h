@@ -6,7 +6,7 @@
 #include "stm32f1xx_hal.h"
 #include "mytype.h"
 #include "can.h"
-
+#include "pid.h"
 
 
 #define FILTER_BUF_LEN		5
@@ -37,5 +37,6 @@ u8 set_moto_current(CAN_HandleTypeDef hcan, s16 SID, s16 iq1);
 void get_moto_offset(moto_measure_t *ptr, CAN_HandleTypeDef* hcan);
 void get_total_angle(moto_measure_t *p);
 float angle_speed_cacl(moto_measure_t moto_chassis[i] ,float set_round);
+float force_feedback_speed_cacl(pid_t pid_angle[]);
 
 #endif

@@ -35,3 +35,4 @@ can_m3508\can.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 can_m3508\can.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 can_m3508\can.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 can_m3508\can.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+can_m3508\can.o: ../Bsp/pid.h

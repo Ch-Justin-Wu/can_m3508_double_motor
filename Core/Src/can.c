@@ -96,7 +96,7 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* CAN1 interrupt Init */
-    HAL_NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, 1, 0);
+    HAL_NVIC_SetPriority(USB_LP_CAN1_RX0_IRQn, 2, 0);
     HAL_NVIC_EnableIRQ(USB_LP_CAN1_RX0_IRQn);
   /* USER CODE BEGIN CAN1_MspInit 1 */
 
@@ -189,7 +189,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
   {
     // flag++;
     HAL_CAN_GetRxMessage(hcan, CAN_FILTER_FIFO0, &can_rx_message, can_receive_data); //获取数据
-    //static uint8_t i = 0;
+    static uint8_t i = 0;
     i = can_rx_message.StdId - 0x201;
     // get_moto_measure(&moto_chassis[i], can_receive_data);
 

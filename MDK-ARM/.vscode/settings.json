@@ -3,6 +3,19 @@
         "stm32f1xx_hal.h": "c",
         "stm32f1xx_hal_can.h": "c",
         "motor.h": "c",
-        "pid.h": "c"
+        "pid.h": "c",
+        "iosfwd": "c",
+        "istream": "c",
+        "memory": "c",
+        "streambuf": "c",
+        "array": "c",
+        "*.tcc": "c",
+        "functional": "c",
+        "tuple": "c",
+        "fstream": "c",
+        "limits": "c",
+        "ostream": "c",
+        "sstream": "c",
+        "utility": "c"
     }
 }

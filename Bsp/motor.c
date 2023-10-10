@@ -1,7 +1,7 @@
 #include "can.h"
 #include "motor.h"
 #include "pid.h"
-moto_measure_t moto_chassis[motor_num] = {0}; // 1 chassis moto
+moto_measure_t moto_chassis[motor_num] = {0}; // 2 chassis moto
 moto_measure_t moto_info;
 
 /**
@@ -100,26 +100,35 @@ void get_moto_offset(moto_measure_t *ptr, CAN_HandleTypeDef *hcan)
 //     p->last_angle = p->angle;
 // }
 
-u8 i;
+    //u8 k;
 
 //设定圈数
 // float set_round=10;
-float real_total_angle;
-float angle_setspeed;
-float set_angle;
+float real_total_angle[motor_num];
+float angle_setspeed[motor_num];
+float set_angle[motor_num];
 //float actual_round;
+static u8 k;
 /**
  * @brief 角速度计算
  *
  * @param set_round
  * @return float
  */
-float angle_speed_cacl(moto_measure_t moto_chassis[i] ,float set_round)
+float angle_speed_cacl(moto_measure_t moto_chassis[k] ,float set_round)
 {
-    set_angle = set_round * 360.0f * 3591.0f / 187.0f;                  //减速比3591/187  计算设定总角度 36.0f/1.0f
-    real_total_angle = moto_chassis[i].total_angle / 8192.0f * 360.0f;  //换算实际总角度
-    //actual_round=(float)moto_chassis[i].total_angle / 8192.0f * 187.0f  / 3591.0f;
-    angle_setspeed = pid_calc(&pid_angle[i], real_total_angle, set_angle); //通过角度环计算设定(角)速度
-    return angle_setspeed;
+    
+    set_angle[k] = set_round * 360.0f * 3591.0f / 187.0f;                  //减速比3591/187  计算设定总角度 36.0f/1.0f
+    real_total_angle[k] = moto_chassis[k].total_angle / 8192.0f * 360.0f;  //换算实际总角度
+    actual_round[k]=(float)moto_chassis[k].total_angle / 8192.0f * 187.0f  / 3591.0f;
+    angle_setspeed[k] = pid_calc(&pid_angle[k], real_total_angle[k], set_angle[k]); //通过角度环计算设定(角)速度
+    return angle_setspeed[k];
 }
 
+static u8 n;
+float force_feedback_speed_cacl(pid_t pid_angle[n])
+{
+    
+    angle_setspeed[1] = pid_calc(&pid_angle[n], (float)pid_angle[0].get, (float)pid_angle[0].set); //通过角度环计算设定(角)速度
+    return angle_setspeed[1];
+}

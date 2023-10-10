@@ -29,3 +29,11 @@ can_m3508\tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 can_m3508\tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 can_m3508\tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 can_m3508\tim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+can_m3508\tim.o: ../Core/Inc/can.h
+can_m3508\tim.o: ../Bsp/pid.h
+can_m3508\tim.o: ../Bsp/motor.h
+can_m3508\tim.o: ../Bsp/mytype.h
+can_m3508\tim.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+can_m3508\tim.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+can_m3508\tim.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+can_m3508\tim.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
