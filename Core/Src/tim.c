@@ -185,13 +185,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   {
     pid_reset(&pid_angle[1], kp_ang_2, ki_ang_2, kd_ang_2);
     //角�?�度计算
-    angle_setspeed_1 = angle_speed_cacl(&moto_chassis[0], set_round1);
+    //angle_setspeed_1 = angle_speed_cacl(&moto_chassis[0], set_round1);
+    angle_setspeed_1=pid_calc(&pid_angle[0], (float)moto_chassis[0].total_angle/ 8192.0f * 360.0f-(float)moto_chassis[1].total_angle/ 8192.0f * 360.0f, 0.0f);
     // PID 电流力矩计算
     torque1 = pid_calc(&pid_motor[0], (float)moto_chassis[0].speed_rpm, angle_setspeed_1);
     // can_cmd_send(torque1, torque2);
     //角�?�度计算
     //angle_setspeed_2 = angle_speed_cacl(&moto_chassis[1], set_round2);
-    angle_setspeed_2=pid_calc(&pid_angle[1], (float)moto_chassis[1].total_angle/ 8192.0f * 360.0f, (float)moto_chassis[0].total_angle/ 8192.0f * 360.0f);
+    //力反馈角度差计算 PID输出 实现单向力反馈
+    angle_setspeed_2=pid_calc(&pid_angle[1], (float)moto_chassis[1].total_angle/ 8192.0f * 360.0f-(float)moto_chassis[0].total_angle/ 8192.0f * 360.0f, 0.0f);
     // PID 电流力矩计算
     torque2 = pid_calc(&pid_motor[1], (float)moto_chassis[1].speed_rpm, angle_setspeed_2);
     // real_speed2 = moto_chassis[1].speed_rpm;
