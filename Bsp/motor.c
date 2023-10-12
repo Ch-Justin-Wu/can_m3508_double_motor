@@ -100,10 +100,9 @@ void get_moto_offset(moto_measure_t *ptr, CAN_HandleTypeDef *hcan)
 //     p->last_angle = p->angle;
 // }
 
-    //u8 k;
 
-//设定圈数
-// float set_round=10;
+
+
 float real_total_angle[motor_num];
 float angle_setspeed[motor_num];
 float set_angle[motor_num];
